@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+
+* {
+  box-sizing: border-box;
+  transition: all ease-in-out 200ms;
+}
+
+/* header
+*/
+
+header {
+  /*position: absolute;*/
+  /*margin-top: 2em;*/
+  background-color: black;
+  color: #FFF;
+}
+
+header h1{
+  font-size: 3rem;
+}
+
+body {
+  margin:0;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  background-color: black;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  background-color: #111;
+  margin: 3em 0.5em 1.5em 0.5em;
+  padding: 1em;
+}
+
+footer a {
+  color: #565656;
+  padding: 0.3em;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #FFF;
+  padding: 0.3em;
+  text-decoration: none;
+}
+
+footer h1 {
+  font-size: 1.5em;
+  color: #777;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 60rem){
+  .footer-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .footer-links a{
+    margin: 1em;
+  }
+
+}
+
+
+header a{
+  color: #565656;
+  padding: 0.3em;
+  margin: 1em;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.clearfix::after,
+section::after {
+  content: '';
+  display: block;
+  clear: both;  
+}
+
+
+/* Navigation bar */
+.nav{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.nav a:hover {
+  color: #FFF;
+  padding: 0.3em;
+  text-decoration: none;
+}
+
+@media (min-width: 60rem){
+  .nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .nav a{
+    margin: 1em;
+  }
+
+}
+
+
+
+
+/* Button */
+
+.button{
+  padding: 1em 1em;
+  margin: 1em;
+  text-decoration: none;
+  /*text-transform: uppercase;*/
+  font-weight: 700;
+  font-size: 1.5em;
+  text-align: center;
+  color: #22eedd;
+  outline: 2px solid #22eedd;
+
+  outline-offset: -0.8em;
+  
+}
+
+.button:hover {
+  color: #22eedd;
+  outline: 2px solid #22eedd;
+}
+
+.button-small {
+  font-size: 1rem;
+  font-weight: 700;
+}
+@media (min-width: 60rem){
+  .button{
+    color: #565656;
+    outline: 2px solid #565656;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+/* Title */
+
+.title-description {
+  color: #22eedd;
+  text-align: center;
+  margin-top: 0px;
+}
+
+
+
+/* Introduction */
+
+
+.introduction {
+  background-color: black;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+}
+
+.intro-image {
+  margin:  0em 0em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.introduction img{
+  border-radius: 50%;
+  max-width: 90%;
+  height: auto;
+
+}
+
+.introduction-textbox {
+  letter-spacing: 1px;
+  margin: 0;
+  text-align: justify;
+}
+
+.introduction-textbox h1{
+  color: #22eedd;
+  background: black;
+  padding: 0 .25em;
+}
+
+
+@media (min-width: 60rem){
+  h1 {
+   font-size: 2.5rem;
+  }
+
+  header h1{
+    font-size: 5rem;
+    padding: 0px;
+    margin: 0em;
+  }
+
+  .logo {
+    padding-bottom: 0px;
+  }
+
+  .title-description {
+    padding: 0px;
+    color: #22eedd;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+  }
+
+  .introduction {
+    background-color: black;
+    margin: 6em 3em;
+    color: #FFF;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .introduction img {
+    max-width: 60%;
+  }
+
+  .intro-image{
+    flex: 50%;
+  }
+
+  .introduction-textbox {
+    flex: 50%;
+  }
+
+  .introduction-textbox h1{
+    color: #22eedd;
+    background: black;
+    padding: 0 2em;
+  }
+
+  .introduction-textbox p {
+    font-size: 17px;
+    text-align: left;
+  }
+
+}
+
+
+
+/* Portfoli styles*/
+
+.projects{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: left;
+}
+
+.portfolio-item {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item img {
+  display: block;
+  transition: transform .6s ease;
+}
+
+.portfolio-item img:hover {
+  transform: scale(1.1);
+}
+
+.portfolio{
+  color: #FFF;
+  margin: 3em 0;
+}
+.portfolio a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.portfolio h2 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.port-desc {
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 1em;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.48081230783328954) 81%, rgba(0,0,0,0.32114844228707107) 89%, rgba(0,0,0,0) 100%);
+  text-align: left;
+}
+
+.port-desc p{
+  margin-bottom: 1em;
+  margin-top: 0;
+  margin-left: 1rem;
+  bottom: 1em;
+  color: #999;
+}
+
+
+@media (min-width: 37rem){
+  .portfolio-item {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media (min-width: 60rem){
+  .portfolio{
+    margin: 3em 0;
+    width: 95%;
+    margin-left: 2.5%;
+  }
+
+  .portfolio-item {
+    width: 33.333%;
+    overflow: hidden;
+  }
+
+  .port-desc {
+    transform: translateY(150%);
+  }
+
+  .portfolio-item:hover .port-desc {
+    transform: translateY(0%);
+  }
+}
+
+
+.contact{
+  margin: 2em 0;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  color: #FFF;
+  background-color: #111;
+}
+
+
+
+/* Product page */
+
+.product {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  margin: 0;
+  padding: 1em;
+  flex: 60%;
+  color: #777;
+}
+.product-image img {
+  width: 100%;
+  margin: 1em 0;
+}
+
+
+.product-info {
+  margin: 2em;
+  flex: 40%;
+}
+
+.product-info h1 {
+  color: #22eedd;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.product-info h2 {
+  margin: 0;
+  color: #22eedd;
+  font-size: 1em;
+  font-weight: 700;
+  text-align: left;
+}
+
+.product-info p {
+  margin-top: 0;
+  color: #999;
+  text-align: left;
+}
+
+.product-info a {
+  color: #22eedd;
+  text-decoration: none;
+}
+
+.product-spec {
+  margin-top: 1em;
+}
+
+
+@media (min-width: 60rem){
+  .product{
+    margin: 3em;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+
+
+
+
+/* Contact page */
+
+
+.contact-intro{
+  color: #FFF;
+  margin: 3em 0;
+  text-align: center;
+
+}
+
+@media (min-width: 60rem){
+  .contact-intro{
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
