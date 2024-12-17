@@ -1,0 +1,43 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PortfolioItem from '../../components/PortfolioItem.astro';
+import { getCollection } from 'astro:content';
+const projects = (await getCollection('projects')).sort((a, b) => b?.data?.priority !== undefined ? a?.data?.priority !== undefined ? a.data.priority - b.data.priority : 1 : -1);
+---
+
+<!doctype html>
+<html lang="en">
+	<BaseHead/>
+	<body>
+	  <Header />
+    <main>
+
+      <section class="portfolio">
+        <h1>My projects</h1>
+        <div id="gallery" class="projects">
+            {
+              projects.map((project) =>
+                <PortfolioItem
+                header={project.data.title}
+                type={project.data.type}
+                img={project.data.thumb}
+                link={`/projects/${project.id}/`}
+                img_alt={project.data.image_alt}
+                />
+              )
+            }
+          <PortfolioItem
+          header='Get in touch!'
+          type='Electronics'
+          img='/img/projects/you_thumb.jpg'
+          link='/contact.html'
+          img_alt='get in touch'
+          />
+      </div>
+    </section>
+    </main>
+		<Footer />
+	</body>
+</html>

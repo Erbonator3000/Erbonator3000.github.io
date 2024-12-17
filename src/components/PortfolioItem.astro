@@ -1,0 +1,21 @@
+---
+interface Props {
+	header: String;
+	type: String;
+	img: string;
+	img_alt: string;
+	link: string;
+}
+
+const { header, type, img, link, img_alt } = Astro.props;
+---
+
+<figure class="portfolio-item">
+  <a href={link}>
+  <img src={img} alt={img_alt}>
+  <figcaption class="port-desc">
+  <h2>{header}</h2>
+  <p>{type}</p>
+  </figcaption>
+</a>
+</figure>
