@@ -296,6 +296,7 @@ section::after {
 }
 
 .portfolio-item img {
+  min-width: 100%;
   display: block;
   transition: transform .6s ease;
 }
