@@ -2,7 +2,7 @@
 title: '3D printable tent line tensioner'
 type: 'Rapid prototyping, Product design'
 year: '2019'
-thumb: '/img/projects/ropesnap_thumb.JPG'
+thumb: '/img/projects/thumb/ropesnap.JPG'
 image: '/img/projects/RopeSnapOpen.JPG'
 additional_images: ['/img/projects/RopeSnapClosed.JPG']
 image_alt: '3D printable tent line tensioner'

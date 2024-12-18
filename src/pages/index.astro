@@ -1,8 +1,12 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import PortfolioItem from '../components/PortfolioItem.astro';
 import Footer from '../components/Footer.astro';
+import PortfolioItem from '../components/PortfolioItem.astro';
+import { getCollection } from 'astro:content';
+const projects = (await getCollection('projects'))
+  .sort((a, b) => b?.data?.priority !== undefined ? a?.data?.priority !== undefined ? a.data.priority - b.data.priority : 1 : -1)
+  .slice(0, 6);
 ---
 <!doctype html>
 <html>
@@ -38,59 +42,19 @@ import Footer from '../components/Footer.astro';
 
 <!-- TODO make the skills slideshow here -->
 
-
-
   <section class="portfolio">
     <h1>Some of my projects</h1>
-    <div class="projects">
+  {
+    projects.map((project) =>
       <PortfolioItem
-        header="Junction hackathon entry: Kaamos"
-        type="Hacathon project"
-        img="img/projects/kaamos_thumb.jpg"
-        link="/projects/kaamos.html"
-        img_alt="kaamos"
+      header={project.data.title}
+      type={project.data.type}
+      img={project.data.thumb}
+      link={`/projects/${project.id}/`}
+      img_alt={project.data.image_alt}
       />
-
-      <PortfolioItem
-        header="PdP project: Team Rapala"
-        type="University course project"
-        img="img/projects/pdp_thumb.jpeg"
-        link="/projects/pdp.html"
-        img_alt="pdp"
-      />
-
-      <PortfolioItem
-        header="Wireless energy harvesting sensor"
-        type="Prototype"
-        img="img/projects/wise1_thumb.jpg"
-        link="/projects/wise.html"
-        img_alt="wise"
-      />
-
-      <PortfolioItem
-        header="Cup-Cup-Go"
-        type="Hackathon project"
-        img="img/projects/cupcupgo_thumb.jpeg"
-        link="/projects/junction2018.html"
-        img_alt="cupcupgo"
-      />
-
-      <PortfolioItem
-        header="3D printable line tensioner"
-        type="Product design"
-        img="/img/projects/ropesnap_thumb.JPG"
-        link="/projects/ropesnap.html"
-        img_alt="rope"
-      />
-
-      <PortfolioItem
-        header="Wireless energy harvesting sensor, Protocamp"
-        type="Prototype"
-        img="img/projects/wiseproto_thumb.jpg"
-        link="/projects/wiseproto.html"
-        img_alt="wiseproto"
-      />
-  </div>
+    )
+  }
   </section>
   
   <div class="container">

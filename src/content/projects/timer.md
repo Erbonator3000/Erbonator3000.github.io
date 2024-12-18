@@ -2,7 +2,7 @@
 title: 'Timer relay controller with simple UI'
 type: 'Electronics prototyping'
 year: '2019'
-thumb: '/img/projects/timer_thumb.JPG'
+thumb: '/img/projects/thumb/timer.JPG'
 image: '/img/projects/timer_screen.JPG'
 additional_images: ['/img/projects/timer_board.JPG']
 image_alt: 'Timer relay controller screen'

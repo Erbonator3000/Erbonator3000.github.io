@@ -2,7 +2,7 @@
 title: 'Laser level repair'
 type: 'Electronics repair'
 year: '2023'
-thumb: '/img/projects/laser.jpg'
+thumb: '/img/projects/thumb/laser.jpg'
 image: '/img/projects/laser.jpg'
 image_alt: 'Laser level repair'
 client: 'Proud laser level owner'

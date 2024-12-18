@@ -2,7 +2,7 @@
 title: 'Energy harvesting wireless illumination sensor'
 type: 'Electronics development and prototyping'
 year: '2018'
-thumb: '/img/projects/wise1_thumb.jpg'
+thumb: '/img/projects/thumb/wise1.jpg'
 image: '/img/projects/wise1.JPG'
 image_alt: 'Energy harvesting wireless illumination sensor prototype'
 client: 'Helvar'

@@ -2,7 +2,7 @@
 title: 'Weather aware industrial controller prototype'
 type: 'Electronics development and prototyping'
 year: '2019-2020'
-thumb: '/img/projects/brainstorm.jpg'
+thumb: '/img/projects/thumb/brainstorm.jpg'
 image: '/img/projects/brainstorm.jpg'
 image_alt: 'Weather aware industrial controller prototype'
 client: 'Attract project course'

@@ -2,7 +2,7 @@
 title: 'Nicotine pouch can battery holder'
 type: 'Re-use and 3D printing'
 year: '2023'
-thumb: '/img/projects/snus.jpg'
+thumb: '/img/projects/thumb/snus.jpg'
 image: '/img/projects/snus.jpg'
 image_alt: 'Nicotine pouch can battery holder'
 client: '-'

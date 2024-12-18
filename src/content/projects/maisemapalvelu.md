@@ -2,7 +2,7 @@
 title: 'Small company website'
 type: 'Web design adn development'
 year: '2023'
-thumb: '/img/projects/maisemapalvelu.png'
+thumb: '/img/projects/thumb/maisemapalvelu.png'
 image: '/img/projects/maisemapalvelu.png'
 image_alt: 'Company website'
 client: 'Tree surgeon Juha Prittinen'

@@ -2,7 +2,7 @@
 title: 'Potato Man: Mobile game'
 type: 'Game development'
 year: '2015'
-thumb: '/img/projects/potatoman.jpg'
+thumb: '/img/projects/thumb/potatoman.jpg'
 image: '/img/projects/potatoman.jpg'
 image_alt: 'Potato Man game'
 client: 'Personal project'

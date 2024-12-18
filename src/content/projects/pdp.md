@@ -2,7 +2,7 @@
 title: 'Product development Project: Color changing lure'
 type: 'Product development'
 year: '2018-2019'
-thumb: '/img/projects/pdp_thumb.jpeg'
+thumb: '/img/projects/thumb/pdp.jpeg'
 image: '/img/projects/pdp.jpeg'
 image_alt: 'Color changing lure'
 client: 'Rapala sponsored university project'

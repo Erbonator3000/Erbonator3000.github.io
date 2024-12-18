@@ -2,7 +2,7 @@
 title: 'Small company website'
 type: 'Web design adn development'
 year: '2023'
-thumb: '/img/projects/osteoaino.png'
+thumb: '/img/projects/thumb/osteoaino.png'
 image: '/img/projects/osteoaino.png'
 image_alt: 'Company website'
 client: 'Ortopedinen osteopaatti Aino Prittinen'

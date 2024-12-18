@@ -2,7 +2,7 @@
 title: 'Wireless notification bracelet'
 type: 'Electronics development and prototyping'
 year: '2024'
-thumb: '/img/projects/remi.jpg'
+thumb: '/img/projects/thumb/remi.jpg'
 image: '/img/projects/remi.jpg'
 image_alt: 'Wireless notification bracelet'
 client: 'Aalto IDBM project group'

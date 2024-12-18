@@ -2,7 +2,7 @@
 title: 'Junction hackathon entry: Cup‑Cup‑Go'
 type: 'Product design, Modelmaking'
 year: '2018'
-thumb: '/img/projects/cupcupgo_thumb.jpeg'
+thumb: '/img/projects/thumb/cupcupgo.jpeg'
 image: '/img/projects/cupcupgo.jpeg'
 image_alt: 'Cup‑Cup‑Go'
 client: 'Junction 2018 entry'

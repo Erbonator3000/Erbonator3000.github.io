@@ -2,7 +2,7 @@
 title: 'Junction hackathon entry: HeadCase concussion detection'
 type: 'Rapid prototyping, Product design'
 year: '2017'
-thumb: '/img/projects/headcase_thumb.png'
+thumb: '/img/projects/thumb/headcase.png'
 image: '/img/projects/headcaseapp.jpg'
 image_alt: 'HeadCase concussion detection'
 client: 'Personal project'

@@ -2,7 +2,7 @@
 title: 'Vodka giftbox upgrade with RGB LEDs'
 type: 'Embedded software'
 year: 2018'
-thumb: '/img/projects/vodka_led_thumb.jpg'
+thumb: '/img/projects/thumb/vodka_led.jpg'
 image: '/img/projects/vodka_led.JPG'
 image_alt: 'Vodka giftbox with RGB LEDs'
 video: 'https://www.youtube.com/embed/M3fsyZw7SD8'

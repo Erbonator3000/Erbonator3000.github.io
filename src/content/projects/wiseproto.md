@@ -2,7 +2,7 @@
 title: 'Wireless energy harvesting sensor'
 type: 'Electronics development and prototyping'
 year: '2017'
-thumb: '/img/projects/wiseproto_thumb.jpg'
+thumb: '/img/projects/thumb/wiseproto.jpg'
 image: '/img/projects/wise.JPG'
 image_alt: 'Wireless energy harvesting sensor prototype'
 video: 'https://www.youtube.com/embed/LvcZGS0hnW4'

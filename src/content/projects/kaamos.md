@@ -2,7 +2,7 @@
 title: 'Junction hackathon entry: Kaamos'
 type: 'Hacathon project'
 year: '2019'
-thumb: '/img/projects/kaamos_thumb.jpg'
+thumb: '/img/projects/thumb/kaamos.jpg'
 image: '/img/projects/kaamos.jpg'
 image_alt: 'kaamos' 
 client: 'Junction 2019 entry'
