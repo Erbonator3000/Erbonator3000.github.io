@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joulupeli 2025</title>
+    <link rel="icon" type="image/x-icon" href="/assets/lahja.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <style>
+        /* Prevent rotating on iOS devices */
+        /* @viewport {
+            width: device-width;
+            zoom: 1;
+        } */
+
+        /* Lock orientation for Android or most browsers */
+        @media only screen and (orientation: landscape) {
+            body {
+                transform: rotate(0deg);
+                /* Prevent rotation */
+                transform-origin: top left;
+            }
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let img;
+        const scaleFactor = 5;
+        const pukkiSpeed = 20;
+        const fallSpeed = 5;
+        const giftCount = 5;
+        const starCount = 5;
+
+        let packets = 100;
+
+        let starPhase = 0;
+
+        let pukkiX = 0;
+        let pukkiY = 0;
+        let pukkiDX = 0;
+        let direction = 1
+        let score = 0;
+
+        let presentsX = new Array(giftCount).fill(0);
+        let presentsY = new Array(giftCount).fill(0);
+
+        let starsX = new Array(starCount).fill(0);
+        let starsY = new Array(starCount).fill(0);
+        let starsPhase = new Array(starCount).fill(0);
+
+        function preload() {
+            // Load image from file
+            pukkiImg = loadImage("/assets/pukki.png");
+            lahjaImg = loadImage("/assets/lahja.png");
+            star1 = loadImage("/assets/star1.png");
+            star2 = loadImage("/assets/star2.png");
+            star3 = loadImage("/assets/star3.png");
+            star4 = loadImage("/assets/star4.png");
+        }
+        function windowResized() {
+            resizeCanvas(min(windowWidth * 0.95, 1024), windowHeight * 0.95);  // Adjust canvas when window is resized
+            pukkiY = height * 3 / 4;
+        }
+
+        function setup() {
+            // createCanvas(600, 400);
+            createCanvas(min(windowWidth * 0.95, 1024), windowHeight * 0.95);  // Set canvas to full screen
+            textSize(32);
+            stroke(255);
+            fill(255);
+            textFont('Roboto');
+            imageMode(CENTER);
+            textAlign(CENTER);
+            for (let p = 0; p < presentsX.length; p++) {
+                presentsX[p] = random(0, width);
+                presentsY[p] = -p * height / giftCount;
+            }
+
+            for (let p = 0; p < starsX.length; p++) {
+                starsX[p] = random(0, width);
+                starsY[p] = random(0, height / 2);
+                starsPhase[p] = random(0, 40);
+            }
+            pukkiX = width / 2;
+            pukkiY = height * 3 / 4;
+        }
+
+        function draw() {
+
+            background(0, 0, 95);
+            rect(0, height * 3 / 4, width, height / 4);
+            noSmooth();
+            // Draw stars
+            for (let p = 0; p < starsX.length; p++) {
+                let starImage = star1;
+                if (starsPhase[p] > 0) starImage = star4;
+                if (starsPhase[p] > 10) starImage = star1;
+                if (starsPhase[p] > 20) starImage = star2;
+                if (starsPhase[p] > 30) starImage = star3;
+                image(starImage, starsX[p], starsY[p], starImage.width * scaleFactor, starImage.height * scaleFactor);
+                starsPhase[p]++;
+                if (starsPhase[p] >= 40) {
+                    starsX[p] = random(0, width);
+                    starsY[p] = random(0, height / 2);
+                    starsPhase[p] = 0;
+                }
+            }
+
+            if (packets <= 0) {
+                text("PELASTIT", width / 2, height / 2);  // Draw text
+                text(score, width / 2, height / 2 + 50);  // Draw number (e.g., score)
+                text("PAKETTIA", width / 2, height / 2 + 100);  // Draw text
+                text("PELAA UUDESTAAN", width / 2, 100);  // Draw text
+                if (mouseIsPressed && mouseX > (width / 2) - 200 && mouseX < (width / 2) + 200
+                    && mouseY > 0 && mouseY < 150) {
+                    packets = 100;
+                    score = 0;
+                    for (let p = 0; p < presentsX.length; p++) {
+                        presentsY[p] -= height;
+                    }
+                }
+                return;
+            }
+
+            pukkiDX = 0;
+            if ((keyIsPressed && keyCode == RIGHT_ARROW) || (mouseIsPressed && mouseX > pukkiX + pukkiSpeed)) {
+                pukkiDX = pukkiSpeed;
+                // direction = 1;
+                // } else if ((keyIsPressed && keyCode == LEFT_ARROW) || (mouseIsPressed && mouseX < width / 2)) {
+            } else if ((keyIsPressed && keyCode == LEFT_ARROW) || (mouseIsPressed && mouseX < pukkiX - pukkiSpeed)) {
+                // direction = -1;
+                pukkiDX = -pukkiSpeed;
+            }
+
+            if (pukkiDX > 0) {
+                direction = 1;
+            } else if (pukkiDX < 0) {
+                direction = -1;
+            }
+            pukkiX += pukkiDX;
+
+            if (pukkiX <= 0) pukkiX = 0;
+            if (pukkiX >= width) pukkiX = width;
+            push()
+            scale(direction, 1);
+            image(pukkiImg, direction * pukkiX, pukkiY, pukkiImg.width * scaleFactor, pukkiImg.height * scaleFactor);
+            pop()
+
+            for (let p = 0; p < presentsX.length; p++) {
+                presentsY[p] += fallSpeed;
+                if (presentsY[p] > pukkiY - (pukkiImg.height * scaleFactor / 2)
+                    && presentsY[p] < pukkiY + (pukkiImg.height * scaleFactor / 2)
+                    && presentsX[p] > pukkiX - (pukkiImg.width * scaleFactor / 2)
+                    && presentsX[p] < pukkiX + (pukkiImg.width * scaleFactor / 2)) {
+                    presentsX[p] = random(0, width);
+                    presentsY[p] -= height;
+                    score++;
+                    packets--;
+                }
+                if (presentsY[p] > height) {
+                    presentsX[p] = random(0, width);
+                    presentsY[p] -= height;
+                    packets--;
+                }
+
+                image(lahjaImg, presentsX[p], presentsY[p], lahjaImg.width * scaleFactor, lahjaImg.height * scaleFactor);
+            }
+            text("Score: ", 50, 50);  // Draw text
+            text(score, 150, 50);  // Draw number (e.g., score)
+        }
+    </script>
+</body>
+
+</html>
